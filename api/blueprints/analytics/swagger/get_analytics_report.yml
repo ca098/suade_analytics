@@ -1,0 +1,10 @@
+Get analytics report based on .csv data
+---
+tags:
+  - Analytics
+
+responses:
+  500:
+    description: Something went wrong
+  200:
+    description: Success - Loaded report
