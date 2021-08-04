@@ -1,7 +1,14 @@
-Get analytics report based on .csv data
+Get analytics report based on .csv data from a given date in the format DD-MM-YYYY
 ---
 tags:
   - Analytics
+
+parameters:
+  - name: date
+    in: path
+    type: string
+    required: true
+    description: DD-MM-YYYY
 
 responses:
   500:

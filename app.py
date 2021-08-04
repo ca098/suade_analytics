@@ -10,7 +10,7 @@ swagger = Swagger(app)
 
 @app.route('/')
 def root():
-    return 'default'
+    return 'API root'
 
 
 if __name__ == '__main__':
