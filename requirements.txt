@@ -3,7 +3,6 @@ attrs==21.2.0
 certifi==2021.5.30
 charset-normalizer==2.0.3
 click==8.0.1
-fastapi==0.66.1
 flasgger==0.9.5
 Flask==2.0.1
 greenlet==1.1.0
