@@ -27,6 +27,17 @@ API will be running on http://127.0.0.1:5000/ with the swagger docs on http://12
 http://127.0.0.1:5000/get_analytics_report/2019-08-02
 ```
 {
+  "commissions": {
+    "order_average": 10514893.66,
+    "promotions": {
+      "1": 22633010.44,
+      "2": 19293679.09,
+      "3": 22016151.23,
+      "4": 15290844.79,
+      "5": 13743272.78
+    },
+    "total": 92976958.32
+  },
   "customers": 10,
   "discount_rate_avg": 0.13,
   "items": 123,

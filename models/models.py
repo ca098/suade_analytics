@@ -10,7 +10,10 @@ class OrderLines:
     def __init__(self, created_at, customer_id, order_id, product_id, product_description, product_price,
                  product_vat_rate, discount_rate,
                  quantity, full_price_amount, discounted_amount, vat_amount, total_amount):
-        # Added created at due to it being highly likely to always require this
+
+        """
+        Added created_at, customer_id as this model is only used with a join. See queries/queries.py
+        """
         self.created_at = created_at
         self.customer_id = customer_id
 
@@ -31,7 +34,10 @@ class ProductPromotions:
     def __init__(self, date, promotion_id, order_id, product_id, product_description, product_price,
                  product_vat_rate, discount_rate,
                  quantity, full_price_amount, discounted_amount, vat_amount, total_amount):
-        # Added created at due to it being highly likely to always require this
+
+        """
+        Added date, promotion_id as this model is only used with a join. See queries/queries.py
+         """
         self.date = date
         self.promotion_id = promotion_id
 
