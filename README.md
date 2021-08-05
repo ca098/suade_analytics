@@ -21,7 +21,6 @@ suade_labs/app.py
 ```
 
 If using terminal, just run
-And point the configuration class to
 ```
 python app.py
 ```
