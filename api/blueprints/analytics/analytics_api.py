@@ -20,10 +20,13 @@ def get_analytics_report(date):
         orders = SE.csv_service.read_csv('orders.csv')
         product_promotions = SE.csv_service.read_csv('product_promotions.csv')
 
-        date = '"{}"'.format(date)
+        f_date = '"{}"'.format(date)
 
-        orders_by_date = SE.query_service.get_orders_for_date(order_lines, orders, date)
-        promotions_by_date = SE.query_service.get_promotions_for_date(product_promotions, order_lines, orders, date)
+        orders_by_date = SE.query_service.get_orders_for_date(order_lines, orders, f_date)
+        promotions_by_date = SE.query_service.get_promotions_for_date(product_promotions, order_lines, orders, f_date)
+
+        if len(orders_by_date) == 0 or len(promotions_by_date) == 0:
+            return jsonify({f'message': f'No data for date: {date}'}), 200
 
         items_sold = len(orders_by_date)
 

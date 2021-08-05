@@ -12,7 +12,8 @@ class OrderLines:
                  quantity, full_price_amount, discounted_amount, vat_amount, total_amount):
 
         """
-        Added created_at, customer_id as this model is only used with a join. See queries/queries.py
+        Added created_at, customer_id as this model is only used with a join. See queries/queries.py.
+        For scalability this should just represent the table, include new models for joins.
         """
         self.created_at = created_at
         self.customer_id = customer_id
@@ -36,7 +37,8 @@ class ProductPromotions:
                  quantity, full_price_amount, discounted_amount, vat_amount, total_amount):
 
         """
-        Added date, promotion_id as this model is only used with a join. See queries/queries.py
+        Added date, promotion_id as this model is only used with a join. See queries/queries.py.
+        For scalability this should just represent the table, include new models for joins.
          """
         self.date = date
         self.promotion_id = promotion_id

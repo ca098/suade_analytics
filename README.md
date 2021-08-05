@@ -19,6 +19,12 @@ And point the configuration class to
 ```
 suade_labs/app.py
 ```
+
+If using terminal, just run
+And point the configuration class to
+```
+python app.py
+```
 ## Running
 API will be running on http://127.0.0.1:5000/ with the swagger docs on http://127.0.0.1:5000/apidocs
 
