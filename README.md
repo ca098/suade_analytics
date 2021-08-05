@@ -1,6 +1,6 @@
 # suade_analytics
 
-__Suade Labs Analytics Challenge__
+__Suade Labs Analytics Challenge (Connor Adams)__
 
 This is a Flask API that parses ```.csv``` data for a demo shop, for a given date in the format __YYYY-MM-DD__
 
