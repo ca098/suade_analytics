@@ -8,10 +8,12 @@ parameters:
     in: path
     type: string
     required: true
-    description: DD-MM-YYYY
+    description: YYYY-MM-DD
 
 responses:
   500:
     description: Something went wrong
+  400:
+    description: Incorrect date string
   200:
     description: Success - Loaded report
