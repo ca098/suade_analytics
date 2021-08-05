@@ -23,7 +23,7 @@ def get_analytics_report(date):
         date = '"{}"'.format(date)
 
         orders_by_date = SE.query_service.get_orders_for_date(order_lines, orders, date)
-        promotions_by_date = SE.query_service.get_promotions_for_date(product_promotions, order_lines, date)
+        promotions_by_date = SE.query_service.get_promotions_for_date(product_promotions, order_lines, orders, date)
 
         items_sold = len(orders_by_date)
 
@@ -48,7 +48,7 @@ def get_analytics_report(date):
 
         }
 
-        return jsonify(payload)
+        return jsonify(payload), 200
 
     else:
         return jsonify({'message': 'Incorrect string format. Please ensure it is in the YYYY-MM-DD format'}), 400
