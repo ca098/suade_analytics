@@ -22,7 +22,7 @@ suade_labs/app.py
 ## Running
 API will be running on http://127.0.0.1:5000/ with the swagger docs on http://127.0.0.1:5000/apidocs
 
-##Example Output
+## Example Output
 
 http://127.0.0.1:5000/get_analytics_report/2019-08-02
 ```
