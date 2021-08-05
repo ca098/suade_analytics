@@ -21,3 +21,16 @@ suade_labs/app.py
 ```
 ## Running
 API will be running on http://127.0.0.1:5000/ with the swagger docs on http://127.0.0.1:5000/apidocs
+
+##Example Output
+
+http://127.0.0.1:5000/get_analytics_report/2019-08-02
+```
+{
+  "customers": 10,
+  "discount_rate_avg": 0.13,
+  "items": 123,
+  "order_total_avg": 164998295.76,
+  "total_discount_amount": 150457385.36
+}
+```
