@@ -12,12 +12,12 @@ This __IS NOT__ an optimal solution by any means. If i had more time, I would re
 ## Build
 To build, Create a __VM__ using Python __3.9__ import requirements from
 ```
-suade_labs/requirements.txt
+suade_analytics/requirements.txt
 ```
 
 And point the configuration class to
 ```
-suade_labs/app.py
+suade_analytics/app.py
 ```
 
 If using terminal, just run
