@@ -45,7 +45,7 @@ http://127.0.0.1:5000/get_analytics_report/2019-08-02
   },
   "customers": 10,
   "discount_rate_avg": 0.13,
-  "items": 123,
+  "items": 3082,
   "order_total_avg": 164998295.76,
   "total_discount_amount": 150457385.36
 }

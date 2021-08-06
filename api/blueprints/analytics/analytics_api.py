@@ -28,7 +28,7 @@ def get_analytics_report(date):
         if len(orders_by_date) == 0 or len(promotions_by_date) == 0:
             return jsonify({f'message': f'No data for date: {date}'}), 200
 
-        items_sold = len(orders_by_date)
+        items_sold = sum(o.quantity for o in orders_by_date)
 
         # TODO - Make this more efficient (1 loop)
         customer_orders = len({o.customer_id for o in orders_by_date})
