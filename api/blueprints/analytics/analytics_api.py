@@ -28,7 +28,6 @@ def get_analytics_report(date):
             return jsonify({f'message': f'No data for date: {date}'}), 200
 
         items_sold = sum(o.quantity for o in orders_by_date)
-
         customer_orders = len({o.customer_id for o in orders_by_date})
 
         commission_total, prom_one, prom_two, prom_three, prom_four, prom_five = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0

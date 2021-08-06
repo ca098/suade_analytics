@@ -22,16 +22,16 @@ class QueryService:
 
         return order_lines_list
 
-    def get_promotions_for_date(self, product_promotions, order_lines, orders, date: str):
+    def get_promotions_for_date(self, product_promotions, order_lines, orders, date: str) -> [ProductPromotions]:
         product_promotions_df = ps.sqldf(GET_PROMOTIONS_BY_DATE_QUERY.format(date))
 
         product_promotions_list = []
         for idx, row in product_promotions_df.iterrows():
             prod_prom = ProductPromotions(row['created_at'], row['promotion_id'], row['order_id'], row['product_id'],
-                                    row['product_description'],
-                                    row['product_price'], row['product_vat_rate'], row['discount_rate'],
-                                    row['quantity'], row['full_price_amount'], row['discounted_amount'],
-                                    row['vat_amount'], row['total_amount'])
+                                          row['product_description'],
+                                          row['product_price'], row['product_vat_rate'], row['discount_rate'],
+                                          row['quantity'], row['full_price_amount'], row['discounted_amount'],
+                                          row['vat_amount'], row['total_amount'])
             product_promotions_list.append(prod_prom)
 
         return product_promotions_list
