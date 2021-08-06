@@ -1,7 +1,6 @@
 from flasgger import swag_from
 from flask import Blueprint, jsonify
 import re
-import statistics
 
 from services.service_engine import ServiceEngine
 
@@ -30,9 +29,7 @@ def get_analytics_report(date):
 
         items_sold = sum(o.quantity for o in orders_by_date)
 
-        # TODO - Make this more efficient (1 loop)
         customer_orders = len({o.customer_id for o in orders_by_date})
-        discount_rate = round(statistics.mean([o.discount_rate for o in orders_by_date]), 2)
 
         commission_total, prom_one, prom_two, prom_three, prom_four, prom_five = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
         for p in promotions_by_date:
@@ -54,10 +51,13 @@ def get_analytics_report(date):
 
         avg_order = (avg_order / len(distinct_orders))
 
-        discount_total, order_total = 0.0, 0.0
+        discount_total, order_total, discount_rate_total = 0.0, 0.0, 0.0
         for o in orders_by_date:
+            discount_rate_total += o.discount_rate
             discount_total += o.discounted_amount
             order_total += o.total_amount
+
+        discount_rate = round((discount_rate_total / len(orders_by_date)), 2)
 
         promotions = {
             "1": round(prom_one, 2),
