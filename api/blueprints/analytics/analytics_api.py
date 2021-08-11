@@ -25,7 +25,7 @@ def get_analytics_report(date):
         promotions_by_date = SE.query_service.get_promotions_for_date(product_promotions, order_lines, orders, f_date)
 
         if len(orders_by_date) == 0 or len(promotions_by_date) == 0:
-            return jsonify({f'message': f'No data for date: {date}'}), 200
+            return jsonify({f'message': f'No data for date: {date}'}), 400
 
         items_sold = sum(o.quantity for o in orders_by_date)
         customer_orders = len({o.customer_id for o in orders_by_date})
