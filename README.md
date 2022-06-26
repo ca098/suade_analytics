@@ -29,8 +29,10 @@ API will be running on http://127.0.0.1:5000/ with the swagger docs on http://12
 
 ## Example Output
 
-http://127.0.0.1:5000/get_analytics_report/2019-08-02
+
 ```
+curl -s http://127.0.0.1:5000/get_analytics_report/2019-08-02 | jq
+
 {
   "commissions": {
     "order_average": 10514893.66,
